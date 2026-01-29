@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Personal Chatbot</title>
+    <link rel="stylesheet" href="styles.css">`n    <link rel="stylesheet" href="logo-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="ai.png" alt="Bot" class="logo-img">
+                </div>
+                <h1>MyBot</h1>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-item active" data-mode="chat">
+                    <span class="icon">💬</span>
+                    <span>Chat</span>
+                </button>
+                <button class="nav-item" data-mode="personality">
+                    <span class="icon">🎭</span>
+                    <span>Personality</span>
+                </button>
+                <button class="nav-item" data-mode="settings">
+                    <span class="icon">⚙️</span>
+                    <span>Settings</span>
+                </button>
+            </nav>
+
+            <div class="chat-history">
+                <h3>Conversations</h3>
+                <div class="history-list" id="historyList">
+                    <button class="history-item">📝 New Chat</button>
+                </div>
+            </div>
+
+            <div class="credits-section">
+                <video class="credits-video" autoplay muted loop controls>
+                    <source src="dl.mov" type="video/quicktime">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="credits-text">Developed by</p>
+                <p class="credits-name">Ayush Kumar</p>
+                <p class="credits-subtext">BCA(AI) @ JNCU</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Section -->
+            <section class="chat-section active" id="chatSection">
+                <div class="chat-header">
+                    <h2>Personal Assistant</h2>
+                    <div class="status">
+                        <span class="status-dot"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+
+                <div class="messages-container" id="messagesContainer">
+                    <div class="message bot-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p>Hello! 👋 I'm your personal AI assistant. I'm here to help you with anything you need. How can I assist you today?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <div class="input-wrapper">
+                        <input type="text" id="messageInput" placeholder="Type your message..." class="message-input">
+                        <button id="sendBtn" class="send-btn">
+                            <span>Send</span>
+                            <span class="send-icon">➤</span>
+                        </button>
+                    </div>
+                    <div class="input-hints">
+                        <span class="hint">💡 Ask anything • Get instant responses • Learn together</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Personality Section -->
+            <section class="personality-section" id="personalitySection">
+                <div class="section-header">
+                    <h2>Bot Personality</h2>
+                    <p>Customize how I interact with you</p>
+                </div>
+
+                <div class="personality-grid">
+                    <div class="personality-card">
+                        <h3>Tone</h3>
+                        <select id="toneSelect">
+                            <option value="friendly">Friendly & Casual</option>
+                            <option value="professional">Professional</option>
+                            <option value="creative">Creative & Playful</option>
+                            <option value="formal">Formal & Respectful</option>
+                        </select>
+                    </div>
+
+                    <div class="personality-card">
+                        <h3>Response Length</h3>
+                        <select id="lengthSelect">
+                            <option value="short">Short & Concise</option>
+                            <option value="medium">Medium</option>
+                            <option value="long">Detailed & Comprehensive</option>
+                        </select>
+                    </div>
+
+                    <div class="personality-card">
+                        <h3>Knowledge Level</h3>
+                        <select id="levelSelect">
+                            <option value="beginner">Beginner-Friendly</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="expert">Expert</option>
+                        </select>
+                    </div>
+
+                    <div class="personality-card">
+                        <h3>Emoji Usage</h3>
+                        <select id="emojiSelect">
+                            <option value="lots">Lots of Emojis 😄</option>
+                            <option value="some">Some Emojis 🙂</option>
+                            <option value="none">No Emojis</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="personality-preview">
+                    <h3>Preview</h3>
+                    <div class="preview-box" id="previewBox">
+                        <p>Your bot will respond in: <strong>Friendly & Casual</strong> tone</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section class="settings-section" id="settingsSection">
+                <div class="section-header">
+                    <h2>Settings</h2>
+                    <p>Configure your chatbot experience</p>
+                </div>
+
+                <div class="settings-list">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>Dark Mode</h3>
+                            <p>Use dark theme for reduced eye strain</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="darkModeToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>Sound Notifications</h3>
+                            <p>Get notified with sound on new messages</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="soundToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>Auto-Save Conversations</h3>
+                            <p>Automatically save your conversations</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="autoSaveToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <h3>Animation Effects</h3>
+                            <p>Enable smooth animations</p>
+                        </div>
+                        <label class="toggle">
+                            <input type="checkbox" id="animationToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="setting-divider"></div>
+
+                    <div class="setting-actions">
+                        <button class="btn btn-secondary" id="clearHistoryBtn">Clear History</button>
+                        <button class="btn btn-primary" id="exportBtn">Export Conversations</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
